@@ -1,0 +1,398 @@
+/* From uiverse.io by @adamgiebl */
+.btn-cart {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #725ac1;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #725ac1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #725ac1;
+}
+
+.btn-cart:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #725ac1;
+}
+
+/* -----------------------General & header Main------------------- */
+
+.small-container {
+    max-width: 1300px;
+    padding: 0 25px;
+    margin: auto;
+}
+
+.row-single_product {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 70px 0;
+    flex-wrap: wrap;
+}
+.col-main {
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.col-main:hover {
+    transform: translatey(-5px);
+}
+.col img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 350px;
+}
+
+.title {
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    height: 5px;
+    width: 130px;
+    background-color: blue;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+/* --------------------------categories---------------------------- */
+
+.col-3 {
+    flex-basis: 30%;
+    min-width: 300px;
+}
+
+/* --------------------------Featured Products---------------------------- */
+
+.col-4 {
+    flex-basis: 25%;
+    min-width: 250xp;
+}
+
+.ratings {
+    color: teal;
+}
+/* --------------------------offer---------------------------- */
+
+.offer {
+    background: radial-gradient(#6dd5ed, #2193b0);
+}
+
+.offer .col-2 h2 {
+    font-size: 2em;
+}
+
+.offer .col-2 img {
+    padding: 40px;
+}
+
+/* --------------------------Testimonial---------------------------- */
+.fa.fa-quote-left {
+    font-size: 40px;
+    color: teal;
+}
+
+.testimonial {
+    text-align: center;
+}
+
+.testimonial .col-3 {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    padding: 25px;
+}
+
+.testimonial p {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.testimonial img {
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+/* --------------------------Brands---------------------------- */
+
+.brands {
+    margin-left: 80px;
+    /* background-color: teal; */
+}
+
+.col-5 {
+    flex-basis: 20%;
+    min-width: 200px;
+}
+
+.col-5 img {
+    width: 70%;
+    padding: 20px;
+    margin: auto;
+    filter: saturate(0);
+}
+.col-5 img:hover {
+    cursor: pointer;
+    filter: saturate(100%);
+}
+
+/* -------------------All Products Page----------------------- */
+.upperstrip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    margin-top: 60px;
+}
+
+.upperstrip select {
+    padding: 6px;
+    width: 180px;
+    border-color: teal;
+}
+
+.downstrip {
+    padding: 0 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 90px;
+}
+
+.downstrip span {
+    border: 2px solid teal;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    font-size: 20px;
+}
+
+.downstrip span:hover {
+    color: thistle;
+    background-color: teal;
+    cursor: pointer;
+}
+
+.allproducts .row {
+    margin: 20px 0;
+}
+/* -------------------Single Products Page----------------------- */
+.single-p {
+    margin-top: 100px;
+}
+.single-p .col-2 {
+    padding: 0 10px;
+}
+.pics-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pics-col-4 {
+    /* transition: border 0.3s; */
+    flex-basis: 24%;
+    cursor: pointer;
+    /* min-width: 250px; */
+}
+
+.pics-col-4:hover {
+    border: 1px dashed rgb(0, 153, 224);
+    border-radius: 10px;
+}
+.pics-col-4 img {
+    width: 100%;
+    /* padding: 5px; */
+}
+
+.single-p h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+.single-p .col-2:nth-child(2) p,
+.title-box p {
+    margin: 15px 0;
+    color: rgb(97, 95, 95);
+}
+
+.single-p input {
+    width: 45px;
+    height: 35px;
+    margin-right: 10px;
+}
+.single-p select {
+    width: 90px;
+    height: 35px;
+}
+
+.single-p .btn {
+    padding: 3px 20px;
+}
+
+.single-p h4 {
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.fa.fa-indent {
+    color: teal;
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.single-p .row {
+    margin-top: 0;
+}
+
+/*--------------------Cart Page---------------------------*/
+.cart-page {
+    margin: 80px auto;
+}
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.data-tbl th {
+    background-color: teal;
+    color: #fff;
+    padding: 10px;
+}
+td {
+    padding: 10px 5px;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cart-info img {
+    width: 90px;
+}
+.cart-info a {
+    font-size: 12px;
+    color: red;
+    text-decoration: none;
+}
+.cart-info-text p,
+.cart-info-text small,
+.cart-info-text a {
+    margin: 10px;
+}
+td input {
+    width: 35px;
+}
+
+.total-tbl {
+    max-width: 35%;
+    margin-left: auto;
+}
+
+table tr th:last-child {
+    text-align: right;
+}
+table tr td:last-child {
+    text-align: right;
+}
+
+#big-img {
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.little-img {
+    border-radius: 8px;
+}
+
+/*--------------------RESPONSIVE------------------------*/
+
+@media only screen and (max-width: 900px) {
+    .testimonial .col-3 {
+        margin: 25px;
+    }
+
+    /* ------login------ */
+    .loginContainer .row .col-2 {
+        flex-basis: 100%;
+        min-width: 400px;
+    }
+
+    .loginContainer .row .col-2:nth-child(1) {
+        position: absolute;
+        z-index: 1;
+    }
+
+    .loginContainer .row .col-2:nth-child(2) {
+        z-index: 2;
+    }
+
+    #big-thumbnail {
+        opacity: 0.5;
+    }
+    .login-box {
+        background: rgba(245, 245, 245, 0.5);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .row {
+        text-align: center;
+    }
+    .col-2,
+    .col-3,
+    .col-4,
+    .footer-col {
+        flex-basis: 100%;
+    }
+
+    /* ------testimonial------ */
+    .testimonial {
+        text-align: center;
+    }
+
+    .testimonial .col-3 {
+        margin: 10px 0;
+        flex-basis: 70%;
+        min-width: 150px;
+    }
+
+    .testimonial p {
+        text-align: justify;
+        margin: 10px 0;
+    }
+
+    .testimonial img {
+        width: 50px;
+        border-radius: 50%;
+        margin: 10px 0;
+    }
+
+    .brands {
+        margin: 0;
+    }
+}
