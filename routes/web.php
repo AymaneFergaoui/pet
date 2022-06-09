@@ -34,8 +34,8 @@ Route::get('/add_to_cart', function () {
 
 
 
-Route::get('/single_product2', function () {
-    return view('single_product2');
+Route::get('/single_product1', function () {
+    return view('single_product1');
 });
 
 Route::get('/about', function () {
