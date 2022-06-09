@@ -52,7 +52,7 @@
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="/about" class="nav-item nav-link">About</a>
                 <a href="/shop" class="nav-item nav-link">Products</a>
-                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Cart <i class="bi bi-arrow-right"></i></a>
+                <a href="/cart" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Cart <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -159,39 +159,38 @@
 
                 @foreach ($products as $item)
 
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="{{asset('img/'.$item->image)}}" alt="">
-                        <h6 class="text-uppercase">{{$item->name}}</h6>
+                    <div class="pb-5">
+                        <div class="product-item position-relative bg-light d-flex flex-column text-center">
+                            <img class="img-fluid mb-4" src="{{asset('img/'.$item->image)}}" alt="">
+                            <h6 class="text-uppercase">{{$item->name}}</h6>
 
-                        @if ($item->sale_price != 0.00 && $item->sale_price != null)
-                            <h5 class="text-primary mb-0">{{$item->sale_price}} DH</h5>
-                            <h5 class="text-primary mb-4" style="text-decoration: line-through;">{{$item->price}} DH</h5>
-                        @else
-                            <h5 class="text-primary mb-5">{{$item->price}} DH</h5>
-                        @endif
+                            @if ($item->sale_price != 0.00 && $item->sale_price != null)
+                                <h5 class="text-primary mb-0">{{$item->sale_price}} DH</h5>
+                                <h5 class="text-primary mb-4" style="text-decoration: line-through;">{{$item->price}} DH</h5>
+                            @else
+                                <h5 class="text-primary mb-5">{{$item->price}} DH</h5>
+                            @endif
 
-                        <div class="btn-action d-flex justify-content-center">
+                            <div class="btn-action d-flex justify-content-center">
 
-                            <form action="{{ route('add_to_cart') }}" method="post">
-                                @scrf
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <input type="hidden" name="name" value="{{ $item->name }}">
-                                <input type="hidden" name="price" value="{{ $item->price }}">
-                                <input type="hidden" name="sale_price" value="{{ $item->sale_price }}">
-                                <input type="hidden" name="image" value="{{ $item->image }}">
-                                <input type="hidden" name="quantity" value="1">
+                                <form action="{{ route('add_to_cart') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $item->id }}">
+                                    <input type="hidden" name="name" value="{{ $item->name }}">
+                                    <input type="hidden" name="price" value="{{ $item->price }}">
+                                    <input type="hidden" name="sale_price" value="{{ $item->sale_price }}">
+                                    <input type="hidden" name="image" value="{{ $item->image }}">
+                                    <input type="hidden" name="quantity" value="1">
 
-                                <button class="btn btn-primary py-2 px-3" href="" type="submit">
-                                    <i class="bi bi-cart"></i>
-                                </button>
-                            </form>
+                                    <button class="btn btn-primary py-2 px-3" href="" type="submit">
+                                        <i class="bi bi-cart"></i>
+                                    </button>
+                                </form>
 
-
-                            <a class="btn btn-primary py-2 px-3" href="{{ route('single_product',['id'=>$item->id])}}"><i class="bi bi-eye"></i></a>
+                                <a class="btn btn-primary py-2 px-3" href="{{ route('single_product',['id'=>$item->id])}}"><i class="bi bi-eye"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 @endforeach
 
