@@ -27,6 +27,9 @@ Route::get('/single_product/{id}', [ProjectController::class, 'single_product'])
 
 
 Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::post('/add_to_cart', [CartController::class, 'add_to_cart'])->name('add_to_cart');
 Route::get('/add_to_cart', function () {
@@ -42,6 +45,4 @@ Route::get('/single_product2', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
+
