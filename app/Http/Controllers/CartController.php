@@ -53,6 +53,8 @@ class CartController extends Controller
                 echo "<script>alert('product is already in cart');</script>";
             }
 
+
+            $this->calculTotalCart($request);
             return view('cart');
 
             //if dont have in a cart in session
@@ -66,7 +68,7 @@ class CartController extends Controller
             $quantity = $request->input('quantity');
             $sale_price = $request->input('sale_price');
 
-            if ($sale_price != null) {
+            if ($sale_price != 0.00 && $sale_price != null) {
                 $best_price = $sale_price;
             } else {
                 $best_price = $price;
@@ -84,8 +86,29 @@ class CartController extends Controller
             $cart[$id] = $product_array;
             $request->session()->put('cart', $cart);
 
+            $this->calculTotalCart($request);
             return view('cart');
         }
 
+    }
+
+    public function calculTotalCart(Request $request)
+    {
+        $cart = $request->session()->get('cart');
+        $total_price = 0;
+        $total_quantity = 0;
+
+        foreach ($cart as $id => $product) {
+            $product = $cart[$id];
+            $price = $product['price'];
+            $quantity = $product['quantity'];
+
+            $total_price += ($price * $quantity);
+            $total_quantity += $quantity;
+
+        }
+
+        $request->session()->put('total',$total_price);
+        $request->session()->put('quantity',$total_quantity);
     }
 }
