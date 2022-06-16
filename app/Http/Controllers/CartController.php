@@ -130,4 +130,9 @@ class CartController extends Controller
         return view('cart');
     }
 
+    public function checkout(Request $request)
+    {
+        return view('checkout');
+    }
+
 }
