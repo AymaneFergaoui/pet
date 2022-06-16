@@ -111,4 +111,23 @@ class CartController extends Controller
         $request->session()->put('total',$total_price);
         $request->session()->put('quantity',$total_quantity);
     }
+
+    public function remove_to_cart(Request $request)
+    {
+
+        if ($request->session()->has('cart')) {
+
+            $id = $request->input('id');
+            $cart = $request->session()->get('cart');
+
+            unset($cart[$id]);
+
+            $request->session()->put('cart',$cart);
+
+            $this->calculTotalCart($request);
+        }
+
+        return view('cart');
+    }
+
 }

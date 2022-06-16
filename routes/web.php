@@ -31,7 +31,13 @@ Route::get('/add_to_cart', function () {
     return redirect('/');
 });
 
+Route::post('/remove_to_cart', [CartController::class, 'remove_to_cart'])->name('remove_to_cart');
+Route::get('/remove_to_cart', function () {
+    return redirect('/');
+});
 
+
+Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
 
 
 Route::get('/single_product1', function () {
