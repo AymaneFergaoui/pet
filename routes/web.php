@@ -37,7 +37,9 @@ Route::get('/remove_to_cart', function () {
 });
 
 
-Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+
+Route::post('/place_order', [CartController::class, 'place_order'])->name('place_order');
 
 
 Route::get('/single_product1', function () {

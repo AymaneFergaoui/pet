@@ -71,8 +71,6 @@
     </div>
 
 
-
-
     <div class="checkout-container">
         @if (Session::has('total'))
             @if (Session::get('total') != null)

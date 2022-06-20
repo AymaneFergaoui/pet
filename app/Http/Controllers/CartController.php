@@ -130,9 +130,29 @@ class CartController extends Controller
         return view('cart');
     }
 
-    public function checkout(Request $request)
+    function checkout()
     {
         return view('checkout');
+    }
+
+    public function place_order(Request $request)
+    {
+        if ($request->session()->hase('cart')) {
+            $name = $request->input('name');
+            $email = $request->input('email');
+            $phone = $request->input('phone');
+            $city = $request->input('city');
+            $address = $request->input('address');
+
+            $cost = $request->session()->get('total');
+            $status = "not paid";
+            $date = date('Y/M/d');
+
+            $cart = $request->session()->get('cart');
+
+        }else {
+            return redirect('/');
+        }
     }
 
 }
