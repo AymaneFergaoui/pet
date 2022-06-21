@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,7 @@ Route::get('/single_product1', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+
+
+Route::get('/payment', [PaymentController::class, 'payment'])->name('payment');
