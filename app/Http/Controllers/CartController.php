@@ -29,7 +29,7 @@ class CartController extends Controller
                 $quantity = $request->input('quantity');
                 $sale_price = $request->input('sale_price');
 
-                if ($sale_price != null) {
+                if ($sale_price != 0.00 && $sale_price != null) {
                     $best_price = $sale_price;
                 } else {
                     $best_price = $price;
